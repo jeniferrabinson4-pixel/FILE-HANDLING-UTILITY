@@ -2,29 +2,16 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
-import java.io.IOException;
-
+import java.io.IOException; 
 public class FileOperations {
-
     public static void main(String[] args) {
         String filePath = "sample.txt";
-
-        
         writeToFile(filePath, "Initial content added to the file.
 File Handling Utility Demonstration.");
-
-        
         readFromFile(filePath);
-
-      
         modifyFile(filePath, "This is an appended modification line.");
-
-        
-        readFromFile(filePath);
+         readFromFile(filePath);
     }
-
-    
-     
     public static void writeToFile(String filePath, String content) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
             writer.write(content);
@@ -35,9 +22,7 @@ File written successfully.
             System.out.println("Error writing to file: " + e.getMessage());
         }
     }
-
-    
-    public static void readFromFile(String filePath) {
+ public static void readFromFile(String filePath) {
         System.out.println("Reading file: " + filePath);
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             String line;
@@ -49,9 +34,7 @@ File written successfully.
             System.out.println("Error reading file: " + e.getMessage());
         }
     }
-
-    
-    public static void modifyFile(String filePath, String newContent) {
+ public static void modifyFile(String filePath, String newContent) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath, true))) {
             writer.write("
 " + newContent);
